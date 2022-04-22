@@ -1,8 +1,21 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { AddAirportComponent } from './add-airport/add-airport.component';
+import { ViewAirportlistComponent } from './view-airportlist/view-airportlist.component';
+import { ViewAirportComponent } from './view-airport/view-airport.component';
 
+
+import { HomeComponent } from './home/home.component';
+
+
+const routes: Routes = [
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path:"home", component:HomeComponent},
+  {path:'add-airport', component:AddAirportComponent},
+  {path:"view-airportlist", component:ViewAirportlistComponent},
+  {path:"view-airport/:airportCode",component:ViewAirportComponent}
+];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
