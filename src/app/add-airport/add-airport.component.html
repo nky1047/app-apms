@@ -6,13 +6,17 @@
 
                             <div class="form-group" (ngSubmit)="addAirport()" novalidate>
                                    <label for="airportName">Aiport Name</label>
-                                   <input [(ngModel)]="airport.airportName"  type="text" pattern="[a-zA-Z]{3,12}" class="form-control" minlength=3 maxlength=12
+                                   <input [(ngModel)]="airport.airportName"  type="text" pattern="[a-zA-Z]{3,12}" class="form-control" minlength=3 maxlength=50
                                           name=airportName id=airportName #airportName="ngModel" required>
 
                                    <div *ngIf="airportName.invalid && (airportName.dirty || airportName.touched)"
                                           class="alert alert-danger">
 
+                                          <div *ngIf="airportName.errors?.pattern">Please use characters a-z, Length 3-12</div>
                                           
+                                          <div *ngIf="airportName.errors?.required">Airport Name is required</div>
+                                          <div *ngIf="airportName.errors?.minlength">Name must be atleast 4 alphabets</div>
+                                          <div *ngIf="airportCode.errors?.maxlength">Must be atMax 12 digits</div>
                                    </div>
                             </div>
                             <div>
@@ -21,7 +25,9 @@
                                           name=airportCode id=airportCode #airportCode="ngModel" required>
                                    <div *ngIf="airportCode.invalid && (airportCode.dirty || airportCode.touched)"
                                           class="alert alert-danger">
-                                          
+                                          <div *ngIf="airportCode.errors?.required">Please Enter the Airport-Code between 3-12 chars.</div>
+                                          <div *ngIf="airportCode.errors?.minlength">Must be atleast 3 digits</div>
+                                          <div *ngIf="airportCode.errors?.maxlength">Must be atMax 12 digits</div>
                                           
                                    </div>
                             </div>
@@ -33,7 +39,9 @@
                                           #airportLocation="ngModel" required>
                                    <div *ngIf="airportLocation.invalid && (airportLocation.dirty || airportLocation.touched)"
                                           class="alert alert-danger">
-                                         
+                                          <div *ngIf="airportLocation.errors?.required">Airport is required</div>
+                                          <div *ngIf="airportLocation.errors?.minlength">Airport must be atleast 3
+                                                 alphabets</div>
                                    </div>
                             </div>
                             <br>

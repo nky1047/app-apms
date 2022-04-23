@@ -29,7 +29,9 @@ export class ServiceService {
     return this.http.get(`${this.baseUrl}/view/${airportCode}`);  
   }
 
- 
+ deleteAirport(code: string):Observable<any>{
+   return this.http.delete(`${this.baseUrl}/${code}`,{responseType:'text'});
+ }
 
 
 }

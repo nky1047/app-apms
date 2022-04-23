@@ -1,1 +1,26 @@
-<p>view-airportlist works!</p>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<h3 align="center">------------------All Airports-----------------</h3>
+<nav class="navbar navbar-expand-sm bg-white navbar-dark"> 
+   
+    <table align="center">
+      <tr>
+        <th>Airport Name</th>
+        <th>Code</th>
+        <th>Location</th>
+      </tr>
+      <tr *ngFor="let a of airport|async">
+        <td>{{a.airportName}}</td>
+        <td>{{a.airportCode}}</td>
+        <td>{{a.airportLocation}}</td>
+        <td><button (click)="deleteAirport(a.airportCode)" >Delete</button></td>
+        <td><button >Update</button></td> 
+      </tr>
+    </table>
+  </nav>
+
+  <div align="right">
+      <br><br><br><br>
+     All data is copyright to its authorised owner. All above data may not be valid. 
+     <br>Thanks!
+  </div>
+
