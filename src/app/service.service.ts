@@ -30,6 +30,7 @@ export class ServiceService {
   }
 
  deleteAirport(code: string):Observable<any>{
+  alert("Airport Deleted");
    return this.http.delete(`${this.baseUrl}/${code}`,{responseType:'text'});
  }
 updateAirport(airport:Object):Observable<Object>{

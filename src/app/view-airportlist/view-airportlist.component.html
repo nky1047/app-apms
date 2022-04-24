@@ -15,8 +15,8 @@
         <td>
         <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="updateAirport(a.airportCode)" background-color="greenyellow"> <mat-icon>Update</mat-icon> <span>Update Details</span>       </button>
-          <button mat-menu-item (click)="deleteAirport(a.airportCode)" background-color="redyellow"> <mat-icon>Delete</mat-icon> <span>Delete this Airport</span>  </button>
+          <button mat-menu-item (click)="updateAirport(a.airportCode)" background-color="greenyellow"> <mat-icon>Edit</mat-icon> <span>Edit Details</span>       </button>
+          <button mat-menu-item (click)="deleteAirport(a.airportCode)" style="background: orangered;"> <mat-icon>Delete</mat-icon> <span>Delete this Airport</span>  </button>
         </mat-menu>
         </td>
       </tr>
