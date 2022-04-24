@@ -32,6 +32,8 @@ export class ServiceService {
  deleteAirport(code: string):Observable<any>{
    return this.http.delete(`${this.baseUrl}/${code}`,{responseType:'text'});
  }
-
+updateAirport(airport:Object):Observable<Object>{
+  return this.http.put(`${this.baseUrl}/update/`,airport);
+}
 
 }

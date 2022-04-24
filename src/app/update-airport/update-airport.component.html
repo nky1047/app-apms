@@ -1,0 +1,56 @@
+<p>update-airport works!</p>
+
+<div>
+    <div class="container" style="width: 400px;">
+
+           <form (ngSubmit)="updateAirport()">
+
+                  <div class="form-group" (ngSubmit)="updateAirport()">
+                         <label for="airportName">Aiport Name</label>
+                         <input [(ngModel)]="airport.airportName"  type="text" pattern="[a-zA-Z]{3,12}" class="form-control" minlength=3 maxlength=50
+                                name=airportName id=airportName #airportName="ngModel" required>
+
+                         <div *ngIf="airportName.invalid && (airportName.dirty || airportName.touched)"
+                                class="alert alert-danger">
+
+                                <div *ngIf="airportName.errors?.pattern">Please use characters a-z, Length 3-12</div>
+                                
+                                <div *ngIf="airportName.errors?.required">Airport Name is required</div>
+                                <div *ngIf="airportName.errors?.minlength">Name must be atleast 4 alphabets</div>
+                                <div *ngIf="airportCode.errors?.maxlength">Must be atMax 12 digits</div>
+                         </div>
+                  </div>
+                  <div>
+                         <label for="airportCode">Airport Code</label>
+                         <input [(ngModel)]="airport.airportCode" maxlength=12  minlength=3 type="text" class="form-control"
+                                name=airportCode id=airportCode #airportCode="ngModel" required [disabled]="true">
+                         <div *ngIf="airportCode.invalid && (airportCode.dirty || airportCode.touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="airportCode.errors?.required">Please Enter the Airport-Code between 3-12 chars.</div>
+                                <div *ngIf="airportCode.errors?.minlength">Must be atleast 3 digits</div>
+                                <div *ngIf="airportCode.errors?.maxlength">Must be atMax 12 digits</div>
+                                
+                         </div>
+                  </div>
+
+                  <div>
+                         <label for="airportLocation">Airport Location</label>
+                         <input [(ngModel)]="airport.airportLocation" minlength=3 type="text"
+                                class="form-control" name=airportLocation id=airportLocation
+                                #airportLocation="ngModel" required>
+                         <div *ngIf="airportLocation.invalid && (airportLocation.dirty || airportLocation.touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="airportLocation.errors?.required">Airport is required</div>
+                                <div *ngIf="airportLocation.errors?.minlength">Airport must be atleast 3
+                                       alphabets</div>
+                         </div>
+                  </div>
+                  <br><br>
+                  <div align="center"><button type="submit" class="btn btn-success">Update Details</button></div>
+                  <br><br>
+                  <a routerLink="/view-airportlist"><button id="method" type="submit"
+                    class="btn btn-primary btn-lg btn-block">View Airports</button></a>
+
+           </form>
+    </div>
+</div>

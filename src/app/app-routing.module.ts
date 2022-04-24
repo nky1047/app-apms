@@ -7,6 +7,7 @@ import { ViewAirportComponent } from './view-airport/view-airport.component';
 
 
 import { HomeComponent } from './home/home.component';
+import { UpdateAirportComponent } from './update-airport/update-airport.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:"home", component:HomeComponent},
   {path:'add-airport', component:AddAirportComponent},
   {path:"view-airportlist", component:ViewAirportlistComponent},
-  {path:"view-airport/:airportCode",component:ViewAirportComponent}
+  {path:"view-airport/:airportCode",component:ViewAirportComponent},
+  {path:"updateAirport/:airportCode", component:UpdateAirportComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

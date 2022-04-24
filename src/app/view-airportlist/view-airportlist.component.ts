@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Airport } from '../Airport';
 import { ServiceService } from '../service.service';
 
+
 @Component({
   selector: 'app-view-airportlist',
   templateUrl: './view-airportlist.component.html',
@@ -35,6 +36,9 @@ deleteAirport(code: string){
     },
     error=> console.log(error)
   )
+}
+updateAirport(code: string) {
+  this.router.navigate(['updateAirport', code]);
 }
 
 }

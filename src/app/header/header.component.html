@@ -1,32 +1,39 @@
-
-
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-
-
-
-
-
-
-<div align="center">
-    <h1>Flight Reservation System<img src="assets/flight.png" width="140px" height="70px"></h1>
+<div>
     <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
+        <div class="col-sm-2">
+            <a (click)="goHome()" routerLinkActive="active" class="nav-link" class="btn active">
+                <img src="assets/flight.png" width="140px" height="70px" title="Home">
+
+            </a>
+        </div>
+        <!-- Jumbotron -->
+        <div class="p-3 col-sm-8 text-center bg-light">
+            <h1 class="mb-2">Flight Reservation System</h1>
+            <h5 class="mb-2">World's Leading Flight Reservation System</h5>
+        </div>
+        <!-- Jumbotron -->
+    </div>
+    <div class="row">
+        <!-- Header Menu-->
+        <div class="col-sm-12">
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
                 <ul class="navbar-nav" style="margin-left:auto;margin-right: auto;">
-                    <li class="nav-item "><a (click)="goHome()" routerLinkActive="active" class="nav-link"
-                            class="btn btn-primary active">Home</a></li>
+                    <li class="nav-item " style="margin-left:auto;"><button (click)="goHome()" routerLinkActive="active"
+                            class="nav-link" class="btn btn-primary active">Home</button></li>
                     <li class="nav-item "><a routerLink="/view-airportlist"><button id="method" type="submit"
                                 class="btn btn-primary active">View Airports</button></a></li>
                     <li class="nav-item "><a routerLink="/add-airport"><button id="method" type="submit"
                                 class="btn btn-primary btn-block active">Add Airport</button></a></li>
-                    <li class="nav-item" class="btn btn-primary active">Stays</li>
-                    <li class="nav-item" class="btn btn-primary active">Airport Taxis</li>
-                    <li class="nav-item" class="btn btn-primary active">Airport Lounges</li>
-                    
-
+                    <li class="nav-item" title="Coming Soon"><a routerLink="/home"><button id="method"
+                                type="submit" class="btn btn-primary active">Stays</button></a></li>
+                    <li class="nav-item" title="Coming Soon"><a routerLink="/home"><button id="method"
+                                type="submit" class="btn btn-primary active">Rental Taxis</button></a></li>
+                    <li class="nav-item" title="Coming Soon"><a routerLink="/home"><button id="method"
+                                type="submit" class="btn btn-primary active">Free AC Lounges</button></a></li>
                 </ul>
             </nav>
-            <div class="col-sm-2"></div>
         </div>
+        <!-- Header Menu-->
     </div>
+
+</div>

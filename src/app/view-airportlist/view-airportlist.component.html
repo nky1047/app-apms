@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<h3 align="center">------------------All Airports-----------------</h3>
+<h3 align="center">All Airports</h3>
 <nav class="navbar navbar-expand-sm bg-white navbar-dark"> 
    
     <table align="center">
@@ -12,8 +12,13 @@
         <td>{{a.airportName}}</td>
         <td>{{a.airportCode}}</td>
         <td>{{a.airportLocation}}</td>
-        <td><button (click)="deleteAirport(a.airportCode)" >Delete</button></td>
-        <td><button >Update</button></td> 
+        <td>
+        <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="updateAirport(a.airportCode)" background-color="greenyellow"> <mat-icon>Update</mat-icon> <span>Update Details</span>       </button>
+          <button mat-menu-item (click)="deleteAirport(a.airportCode)" background-color="redyellow"> <mat-icon>Delete</mat-icon> <span>Delete this Airport</span>  </button>
+        </mat-menu>
+        </td>
       </tr>
     </table>
   </nav>

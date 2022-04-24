@@ -3,8 +3,5 @@ th, td {
     text-align: left;
     text-align: center;
     font-size: small;
+    border-bottom: 1px solid #ddd;
   }
-
-button{
-
-}
